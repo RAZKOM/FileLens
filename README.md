@@ -1,14 +1,15 @@
 # FileLens
 
-Right-click any file on Windows. Get instant analysis: hashes, strings, hex, PE internals, metadata. All in a compact popup that disappears when you click away.
+Right click any file on Windows. Get instant analysis: hashes, strings, hex, PE internals, metadata. All in a compact popup that disappears when you click away.
 
 
+> **[demo](assets/demo.gif)**
 
 ---
 
 ## Download
 
-> **[Download FileLens for Windows →](https://github.com/RAZKOM/filelens/releases/latest)**
+> **[Download FileLens for Windows](https://github.com/RAZKOM/filelens/releases/latest)**
 
 Unzip and run `filelens.exe --register`. No installer, no admin rights, nothing else needed.
 

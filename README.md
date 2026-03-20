@@ -3,7 +3,7 @@
 Right click any file on Windows. Get instant analysis: hashes, strings, hex, PE internals, metadata. All in a compact popup that disappears when you click away.
 
 
-> **[demo](assets/demo.gif)**
+> ![demo](assets/demo.gif)
 
 ---
 

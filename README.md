@@ -83,7 +83,7 @@ pub trait AnalysisTab: Send {
     fn relevant_for(&self, _path: &Path) -> bool { true }     // Show/hide tab per file
 }
 ```
-
+---
 ## Support
 
 FileLens is free and open source. If it's been useful, a tip is always appreciated but never expected.

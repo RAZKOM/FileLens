@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: "."
+
+      - name: Build release binary
+        run: cargo build --release
+
+      - name: Package zip
+        id: pack
+        shell: pwsh
+        run: |
+          $tag = '${{ github.ref_name }}'
+          $zip = "filelens-$tag-windows-x86_64.zip"
+          Compress-Archive -LiteralPath "target/release/filelens.exe" -DestinationPath $zip -Force
+          echo "path=$zip" >> $env:GITHUB_OUTPUT
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.pack.outputs.path }}
+          generate_release_notes: true
